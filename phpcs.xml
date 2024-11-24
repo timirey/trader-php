@@ -25,6 +25,11 @@
         </properties>
     </rule>
 
+    <!-- Disable line length check -->
+    <rule ref="Generic.Files.LineLength">
+        <severity>0</severity>
+    </rule>
+
     <!-- Directories to include -->
     <file>src</file>
     <file>tests</file>
