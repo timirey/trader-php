@@ -26,6 +26,7 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: 7.4
+                    extensions: trader
 
             -   name: Install Dependencies
                 run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
