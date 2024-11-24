@@ -1,0 +1,40 @@
+name: pull request
+
+on:
+    pull_request:
+        types:
+            - opened
+            - synchronize
+            - reopened
+        branches:
+            - dev
+            - main
+
+jobs:
+    check-pull-request:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   name: Check branch prefix
+                run: |
+                    BRANCH_NAME=${GITHUB_HEAD_REF}
+                    TARGET_BRANCH=${GITHUB_BASE_REF}
+
+                    if [[ "$TARGET_BRANCH" == "dev" ]]; then
+                      if [[ "$BRANCH_NAME" =~ ^feature/|^release/|^hotfix/ ]]; then
+                        echo "Branch name is valid for dev."
+                      else
+                        echo "Error: Branch name for dev must start with 'feature/', 'release/', or 'hotfix/'."
+                        exit 1
+                      fi
+                    elif [[ "$TARGET_BRANCH" == "main" ]]; then
+                      if [[ "$BRANCH_NAME" =~ ^release/|^hotfix/ ]]; then
+                        echo "Branch name is valid for main."
+                      else
+                        echo "Error: Branch name for main must start with 'release/' or 'hotfix/'."
+                        exit 1
+                      fi
+                    else
+                      echo "Error: Unsupported target branch."
+                      exit 1
+                    fi
