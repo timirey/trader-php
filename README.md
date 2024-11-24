@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/timirey/trader-php/master/.github/logo.svg" alt="Trader PHP" width="320">
+<img src="https://raw.githubusercontent.com/timirey/trader-php/main/.github/logo.svg" alt="Trader PHP" width="320">
 </p>
 
 
