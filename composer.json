@@ -1,44 +1,44 @@
 {
-  "name": "timirey/trader-php",
-  "description": "PHP wrapper for the trader extension, providing access to technical analysis indicators.",
-  "keywords": [
-    "php",
-    "trading",
-    "indicators"
-  ],
-  "type": "library",
-  "license": "MIT",
-  "autoload": {
-    "psr-4": {
-      "Timirey\\Trader\\": "src/"
+    "name": "timirey/trader-php",
+    "description": "PHP wrapper for the trader extension, providing access to technical analysis indicators.",
+    "keywords": [
+        "php",
+        "trading",
+        "indicators"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Timirey\\Trader\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Timirey\\Trader\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Artiom Misiru",
+            "email": "misiru.artiom@gmail.com",
+            "role": "Certified Web Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-trader": "*"
+    },
+    "require-dev": {
+        "mockery/mockery": "1.*",
+        "phpstan/phpstan": "1.*",
+        "pestphp/pest": "2.*",
+        "slevomat/coding-standard": "8.*"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Timirey\\Trader\\Tests\\": "tests/"
-    }
-  },
-  "authors": [
-    {
-      "name": "Artiom Misiru",
-      "email": "misiru.artiom@gmail.com",
-      "role": "Certified Web Developer"
-    }
-  ],
-  "require": {
-    "php": ">=7.4",
-    "ext-trader": "*"
-  },
-  "require-dev": {
-    "mockery/mockery": "1.*",
-    "phpstan/phpstan": "1.*",
-    "pestphp/pest": "2.*",
-    "slevomat/coding-standard": "8.*"
-  },
-  "config": {
-    "allow-plugins": {
-      "pestphp/pest-plugin": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
-  }
 }
